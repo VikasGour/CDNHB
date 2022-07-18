@@ -12,7 +12,7 @@ image_id=$1
 aws ecr get-login-password --region us-west-2 | docker login --username AWS --password-stdin "784190227945.dkr.ecr.us-west-2.amazonaws.com"
  
 # push loaded docker image to ecr
-docker tag "nodejs-jenkins-CIFORNHB-${image_id}" "784190227945.dkr.ecr.us-west-2.amazonaws.com/nhb:nodejs-jenkins-CIFORNHB-${image_id}"
+docker tag "nodename:nodejs-jenkins-CIFORNHB-${image_id}" "784190227945.dkr.ecr.us-west-2.amazonaws.com/nhb:nodejs-jenkins-CIFORNHB-${image_id}"
 docker push "784190227945.dkr.ecr.us-west-2.amazonaws.com/nhb:nodejs-jenkins-CIFORNHB-${image_id}"
  
 # update ecs service with new image (jump point needs appropriate iam permissions)
